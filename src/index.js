@@ -71,22 +71,23 @@ $('#mobile-hamburger-menu').on('click', (e) => {
   }
 });
 
-$('.header-ul-item.item-expandable').on('click', (e) => {
+$('.mobile-header-ul-item.item-expandable').on('click', (e) => {
   e.preventDefault();
-  $(this).find('.arrow-down').toggleClass('hidden');
-  $(this).find('.arrow-up').toggleClass('hidden');
+  $(e.target).find('.arrow-down').toggleClass('hidden');
+  $(e.target).find('.arrow-up').toggleClass('hidden');
 });
 
 $('.logo-expand').on('click', (e) => {
   e.preventDefault();
-  $(this).find('.arrow-down').toggleClass('hidden');
-  $(this).find('.arrow-up').toggleClass('hidden');
+  $('.logo-expand').find('.arrow-down').toggleClass('hidden');
+  $('.logo-expand').find('.arrow-up').toggleClass('hidden');
 });
+
 
 $('.nav-link').on('mouseenter mouseleave', (e) => {
   e.preventDefault();
-  $(this).find('.arrow-down').toggleClass('hidden');
-  $(this).find('.arrow-up').toggleClass('hidden');
+  $(e.target).find('.arrow-down').toggleClass('hidden');
+  $(e.target).find('.arrow-up').toggleClass('hidden');
 });
 
 $('.mobile-header-search-field').on('mouseenter mouseleave', (e) => {
