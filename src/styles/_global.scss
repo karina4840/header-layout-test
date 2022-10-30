@@ -1,0 +1,449 @@
+// Переменные цветов
+$grey: #5b5f6a;
+$lightGrey: #edf2fb80;
+$whitePure: #ffffff;
+$blueBg: #e7effb;
+$lightBlue: #b9d0f1;
+$secondaryBlue: #7d91ae;
+$accentBlue: #0999ee;
+$focusBlue: #0082cf;
+$mainBlue: #21325d;
+
+// Перезапись значений bootstrap
+$grid-columns: 12 !default;
+$grid-gutter-width: 24px !important;
+
+// Общие стили - начало
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Onest300;
+  transition: ease-in-out 300ms !important;
+}
+main {
+  padding: 0 24px;
+  position: relative;
+  height: 900px;
+  background-color: #efefef;
+}
+.hidden {
+  opacity: 0;
+  transition: ease-in-out 100ms;
+}
+header {
+  background-color: $whitePure;
+}
+.navbar {
+  width: 100%;
+  background: $whitePure;
+  padding: 43px 0 24px 0;
+  position: absolute;
+  z-index: 5;
+}
+// Общие стили - конец
+
+// Мобильная версия - начало
+.mobile-header-container {
+  padding: 0 24px;
+}
+.search-field-component {
+  position: relative;
+  flex-direction: row;
+}
+#mobile-search {
+  position: relative;
+  height: 30px;
+  right: 35px;
+  padding: 2px;
+  pointer-events: none;
+}
+.mobile-search-move-right {
+  right: 135px !important;
+}
+.mobile-header-search-field {
+  border: 1px solid $lightBlue;
+  border-radius: 6px;
+  width: 136px;
+  height: 30px;
+  font-size: 12px;
+  padding-right: 20px;
+  color: $grey;
+
+  &::placeholder {
+    color: $grey;
+    font-family: Onest300;
+  }
+
+  &:focus {
+    box-shadow: none;
+    border-color: $lightBlue;
+    padding-left: 28px;
+    padding-right: 3px;
+    &::placeholder {
+      color: $accentBlue;
+      font-family: Onest500;
+    }
+  }
+}
+.navbar-toggler {
+  outline: none;
+  border: none;
+
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+.mobile-header-ul-block {
+  padding: 43px 0 36px 0;
+  margin-bottom: 0 !important;
+}
+.mobile-header-ul-item {
+  background-color: $lightGrey;
+  padding: 0 14px;
+  width: 100%;
+  height: 44px;
+  display: flex;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  align-items: center;
+  justify-content: space-between;
+
+  .mobile-header-nav-link {
+    font-size: 13px;
+    color: $mainBlue;
+    font-family: Montserrat600;
+  }
+}
+.product-block,
+.documentation-block,
+.company-block {
+  border: none;
+  padding: 12px 0;
+}
+.products-list,
+.documentation-list,
+.company-list {
+  padding: 0 14px;
+}
+.product-item,
+.documentation-item,
+.company-item {
+  list-style: none;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+.product-link,
+.product-link:hover,
+.documentation-link,
+.documentation-link:hover,
+.company-link,
+.company-link:hover {
+  text-decoration: none;
+  color: $mainBlue;
+}
+.product-link:focus,
+.documentation-link:focus,
+.company-link:focus {
+  text-decoration: underline;
+  color: $mainBlue;
+}
+.mobile-btn-login {
+  border: 1px solid $secondaryBlue;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px 8px 16px;
+  width: 141px;
+  height: 30px;
+
+  &:focus {
+    padding: 8px 12px 8px 16px;
+    width: 165px;
+    height: 35px;
+    background-color: $accentBlue;
+    border-color: $accentBlue;
+
+    .arrow-up-right {
+      width: 12.22px;
+      height: 12.22px;
+    }
+    .mobile-btn-login-text {
+      font-family: Onest500;
+      color: $whitePure;
+      font-size: 13px;
+      margin: 0;
+    }
+  }
+  &:active {
+    background-color: $focusBlue !important;
+    border-color: $focusBlue !important;
+  }
+}
+.mobile-login-btn-components {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .mobile-btn-login-text {
+    font-family: Onest500;
+    color: $grey;
+    font-size: 12px;
+    margin: 0;
+  }
+  .arrow-up-right {
+    width: 8.56px;
+    height: 8.56px;
+  }
+}
+#mobile-hamburger-menu {
+  padding: 0;
+  width: 20px;
+  height: 20px;
+}
+#mobile-menu {
+  position: absolute;
+}
+// Мобильная версия - конец
+
+// Экранная версии - начало
+@media (min-width: 0px) {
+  #screen-only {
+    display: none;
+  }
+  #mobile-only {
+    display: block;
+  }
+}
+@media (min-width: 960px) {
+  #mobile-only {
+    display: none;
+  }
+  #screen-only {
+    display: block;
+  }
+
+  .swiper {
+    width: 300px;
+    height: 600px;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+  .screen-dropdown-link:hover {
+    background-color: $blueBg;
+  }
+  .screen-dropdown-link:focus {
+    background-color: $lightBlue;
+  }
+  .logo-dropdown-link:hover,
+  .logo-dropdown-link:focus {
+    background-color: transparent;
+  }
+
+  .logo-expand {
+    width: 32px;
+    height: 28px;
+    border-radius: 6px;
+
+    &:hover {
+      box-shadow: 0px 0px 1px rgba(125, 145, 174, 0.35),
+        0px 2px 2px rgba(125, 145, 174, 0.35),
+        0px 5px 10px 2px rgba(125, 145, 174, 0.25);
+    }
+    &:focus {
+      background: $lightGrey;
+      box-shadow: 0px 3px 5px rgba(125, 145, 174, 0.2),
+        0px 1px 3px rgba(125, 145, 174, 0.35);
+    }
+  }
+  .logo-dropdown {
+    padding: 16px 26px;
+    width: 205px;
+    height: 280px;
+    margin-top: -25px !important;
+  }
+  .service-name {
+    font-family: Onest400;
+    font-size: 17px;
+    color: $mainBlue;
+  }
+  .service-description {
+    white-space: normal;
+    font-family: Onest300;
+    font-size: 13px;
+    color: $secondaryBlue;
+  }
+  .container-fluid {
+    padding: 0 64px;
+  }
+  #screen-documentation-tab {
+    display: none;
+  }
+  .main-action-container {
+    gap: 24px;
+  }
+  .nav-link {
+    font-size: 15px;
+  }
+  .screen-header-search {
+    border: none;
+    background-color: $blueBg;
+    border-radius: 6px;
+    width: 65px;
+    height: 36px;
+    font-size: 12px;
+    padding: 0 0 0 10px;
+    color: #5b5f6a;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 0 !important;
+
+    &::placeholder {
+      font-size: 15px;
+      color: $secondaryBlue;
+    }
+
+    &:focus {
+      box-shadow: none;
+      background-color: $blueBg;
+    }
+  }
+  #screen-search {
+    background-color: $blueBg;
+    border-radius: 6px;
+    width: 20px;
+    height: 36px;
+    font-size: 12px;
+    padding-right: 10px;
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .tel-email-box {
+    display: flex;
+    flex-direction: column;
+
+    .tel,
+    .email {
+      margin: 0;
+      font-size: 13px;
+    }
+    .email {
+      color: $focusBlue;
+    }
+  }
+  .screen-login-btn {
+    align-items: center;
+    justify-content: space-between;
+    padding: 7.5px 12px 7.5px 16px;
+    width: 90px;
+    height: 36px;
+    font-size: 15px;
+    font-family: Onest300;
+    background: $whitePure;
+    border: 1px solid #7d91ae;
+    border-radius: 10px;
+    color: $grey;
+    transition: ease-in-out 100ms !important;
+
+    &:hover {
+      background-color: $accentBlue;
+      border-color: $accentBlue;
+      color: $whitePure;
+      font-family: Onest500;
+    }
+    &:active {
+      background-color: $focusBlue !important;
+      border-color: $focusBlue !important;
+    }
+  }
+  .arrow-up-right {
+    width: 7.33px;
+    height: 7.33px;
+  }
+  .screen-dropdown {
+    border: none;
+    border-radius: 6px;
+    box-shadow: rgb(125 145 174 / 35%) 0px 2px 2px,
+      rgb(125 145 174 / 35%) 0px 2px 2px,
+      rgb(125 145 174 / 25%) 0px 5px 10px 2px;
+  }
+  .screen-dropdown-item {
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 1024px) {
+  .container-fluid {
+    padding: 0 24px;
+  }
+  #screen-documentation-tab {
+    display: block;
+  }
+  .screen-header-search {
+    width: 15px;
+  }
+  #screen-search {
+    width: 25px;
+    padding-right: 15px;
+  }
+}
+@media (min-width: 1440px) {
+  .container-fluid {
+    padding: 0 78px;
+  }
+
+  .screen-header-search {
+    border: none;
+    background-color: $blueBg;
+    border-radius: 6px;
+    width: 65px;
+    height: 36px;
+    font-size: 12px;
+    padding: 0 0 0 10px;
+    color: #5b5f6a;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-right: 0 !important;
+
+    &::placeholder {
+      font-size: 15px;
+      color: $secondaryBlue;
+    }
+
+    &:focus {
+      box-shadow: none;
+      background-color: $blueBg;
+    }
+  }
+  #screen-search {
+    background-color: $blueBg;
+    border-radius: 6px;
+    width: 20px;
+    height: 36px;
+    font-size: 12px;
+    padding-right: 10px;
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .screen-login-btn {
+    width: 165px;
+  }
+}
+@media (min-width: 1920px) {
+  .container-fluid {
+    padding: 0 168px;
+  }
+  .screen-login-btn {
+    width: 222px;
+  }
+}
+// Экранная версии - конец
